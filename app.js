@@ -20,7 +20,7 @@ app.get("/",function(req,res){
         const icon =  weatherdata.weather[0].icon;
         const imgurl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
         const desc = weatherdata.weather[0].description;
-        const temp = weatherdata.main.temp;
+        const temp = (weatherdata.main.temp)/10;
         const desctxt = "The weather is currently " + desc;
         res.write("<h1>The Temperature in  " + query + " is " + temp+'&deg;' +"C</h1>")
       res.write("<p>" +desctxt +"</p>");
